@@ -1,0 +1,23 @@
+
+<form onsubmit={{fn this.submit @model}}>
+  <input placeholder='Add todo' type='text' value={{this.text.todo}} onchange={{fn this.onChange}} />
+  <button type='submit'>Add item</button>
+</form>
+<ul id="todo-list">
+  {{#each @model as |item|}}
+  {{#if item.id}}
+   <li v-for="(item, index) in todo-app">
+    <input type="checkbox" :id="`todo-${index}`" v-model="todo.done">
+    <label :for="`todo-${index}`">{{item.todo}}</label>     
+  <button class="destroy" onclick={{fn this.delete @model item}}></button>
+  </li>
+  {{/if}}
+  {{/each}}
+</ul>
+
+
+        
+
+
+
+
